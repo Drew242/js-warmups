@@ -25,14 +25,18 @@ menu.$inject = ['CheesecakeFactory']
 function menu (CheesecakeFactory) {
     console.info('menu:CheesecakeFactory', CheesecakeFactory);
     var menu = this;
-    menu.greeting = "Ain't no pound cake around here!"
-    menu.newMenuItem = {}
+    menu.greeting = "Ain't no pound cake around here!";
+    menu.newMenuItem = {};
+
+    menu.title = "Delectables";
+
+    menu.search = '';
 
 	  menu.items = CheesecakeFactory.menuItems;
 
     menu.newItem = function() {
       menu.items.push(menu.newMenuItem)
-    }
+    };
 }
 
 function menuOrderCtrl(CheesecakeFactory) {

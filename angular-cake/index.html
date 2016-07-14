@@ -7,12 +7,17 @@
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
          <script src='cake.js'></script>
          <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'/>
+         <link rel='stylesheet' href='main.css'/>
     </head>
     <body class="container">
 
       <div ng-controller="menu as menu">
+        <h1>{{ menu.title }}</h1>
+        <fieldset class='row'>
+          <input type='text' class='form-control' placeholder='search' ng-model='menu.search'/>
+        </fieldset>
         <ul>
-          <li ng-repeat='item in menu.items'>
+          <li ng-repeat='item in menu.items | filter:menu.search'>
             {{ item.name }} - <b>{{ item.price | currency }}</b> - calories: {{ item.calories | number }}
           </li>
         </ul>
