@@ -17,7 +17,7 @@
           <input type='text' class='form-control' placeholder='search' ng-model='menu.search'/>
         </fieldset>
         <ul>
-          <li ng-repeat='item in menu.items | filter:menu.search'>
+          <li ng-repeat="item in menu.items | filter:menu.search | orderBy:'calories'">
             {{ item.name }} - <b>{{ item.price | currency }}</b> - calories: {{ item.calories | number }}
           </li>
         </ul>

@@ -31,6 +31,9 @@ function menu (CheesecakeFactory) {
     menu.title = "Delectables";
 
     menu.search = '';
+    menu.lowCal = function(menuItem) {
+      return menuItem.calories < 2000; 
+    };
 
 	  menu.items = CheesecakeFactory.menuItems;
 
@@ -66,6 +69,20 @@ function CheesecakeFactory(){
     deliciousness: 10,
     flavor: 'chocolate',
     price: 13
+  },
+  {
+    name: 'Cherry Cheesecake',
+    calories: 1100,
+    deliciousness: 7,
+    flavor: 'cherriness',
+    price: 11.95
+  },
+  {
+    name: 'Ambrosia Cheesecake',
+    calories: 900,
+    deliciousness: 6,
+    flavor: 'cinnamon',
+    price: 8.95
   }
   ]
 
